@@ -2,26 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ededed;
     --foreground: #ededed;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2dd4bf;
+}
+
+/* Custom utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Keyframes for rotating border animation */
+  @keyframes rotate-border {
+    0% {
+      transform: rotate(0deg);
+      border-top-color: rgb(27, 27, 27);
+      border-right-color: rgb(12, 196, 196);
+      border-bottom-color: rgb(27, 27, 27);
+      border-left-color: rgb(12, 196, 196);
+    }
+    25% {
+      border-top-color: rgb(12, 196, 196);
+      border-right-color: rgb(27, 27, 27);
+      border-bottom-color: rgb(12, 196, 196);
+      border-left-color: rgb(27, 27, 27);
+    }
+    50% {
+      border-top-color: rgb(27, 27, 27);
+      border-right-color: rgb(12, 196, 196);
+      border-bottom-color: rgb(27, 27, 27);
+      border-left-color: rgb(12, 196, 196);
+    }
+    75% {
+      border-top-color: rgb(12, 196, 196);
+      border-right-color: rgb(27, 27, 27);
+      border-bottom-color: rgb(12, 196, 196);
+      border-left-color: rgb(27, 27, 27);
+    }
+    100% {
+      transform: rotate(360deg);
+      border-top-color: rgb(27, 27, 27);
+      border-right-color: rgb(12, 196, 196);
+      border-bottom-color: rgb(27, 27, 27);
+      border-left-color: rgb(12, 196, 196);
+    }
+  }
+
+  /* Utility class to apply the animation */
+  .animate-rotate-border {
+    animation: rotate-border 8s linear infinite;
+  }
+
+  /* Keyframes for move-circle animation */
+  @keyframes move-circle {
+    from {
+      transform: translate(0px, 0px) scale(1);
+    }
+    to {
+      transform: translate(10px, -10px) scale(1.2);
+    }
+  }
+
+  /* Keyframes for move-dot animation */
+  @keyframes move-dot {
+    from {
+      transform: translate(0px, 0px) scale(1);
+    }
+    to {
+      transform: translate(-5px, 5px) scale(0.8);
+    }
+  }
+
+  /* Utility classes for animated circles and dots */
+  .animate-move-circle {
+    animation: move-circle 6s ease-in-out infinite alternate;
+  }
+
+  .animate-move-dot {
+    animation: move-dot 3s ease-in-out infinite alternate;
   }
 }
