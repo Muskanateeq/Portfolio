@@ -12,8 +12,8 @@ export default function ProjectSection() {
       description: "Book appointments quickly and easily with our medical website. Patients can view available slots, choose preferred dates and times, and confirm bookings with ease. Designed to provide healthcare services.",
       tech: "React, Next js",
       image: "/WorkSection1/Thumbnail1.png",
-      githubLink: "https://github.com/Muskanateeq/Medical-Website",
-      vercelLink: "#"
+      githubLink: "https://github.com/Muskanateeq/Appointment-booking-medical-website",
+      vercelLink: "https://appointment-booking-medical-website-uoat.vercel.app/"
     },
     {
       id: "02",
@@ -97,6 +97,7 @@ export default function ProjectSection() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
+          <a href={currentProject.vercelLink} target="_blank" rel="noopener noreferrer">
             <Image
               src={currentProject.image}
               alt="Project thumbnail"
@@ -104,6 +105,7 @@ export default function ProjectSection() {
               width={7000}
               height={9000}
             />
+            </a>
             <div className="flex absolute bottom-4 right-4 space-x-2">
               <motion.button
                 onClick={handlePrevious}

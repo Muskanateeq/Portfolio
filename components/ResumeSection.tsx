@@ -40,7 +40,7 @@ export default function ResumeSection() {
           <div className="text-center">
             <div className="w-[115px] h-[100px] rounded-[50%] border-4 border-white-400 overflow-hidden mx-auto">
               <Image
-                src="/profile.img.png"
+                src="/ResumeSection/Profile.img.png"
                 alt="Profile Picture"
                 width={120}
                 height={120}

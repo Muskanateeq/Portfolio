@@ -36,7 +36,7 @@ const Hero = () => {
         ></motion.div>
         <div className="relative w-full h-full rounded-full overflow-hidden pb-8">
           <Image
-            src="/Profile image.png"
+            src="/Hero/profile image.png"
             alt="Profile"
             layout="fill"
             objectFit="cover"
